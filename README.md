@@ -119,6 +119,7 @@ $updateWhere [
 DELETE takes 2 parameters: tablename and where conditions similar as above. <br>
 <b>Note: </b> WHERE condition is set to default as required.
 <br><br>
+
 ```
 $deleteWhere = [
 	["uid", "=", 1234, "AND"],
@@ -128,6 +129,7 @@ $deleteWhere = [
 
 (new query)->delete("users", $deleteWhere);
 ```
+
 <br><br>
 <h1>Contributions </h1> <br>
 <a href='https://github.com/SalilMittal'>Salil Mittal</a>
