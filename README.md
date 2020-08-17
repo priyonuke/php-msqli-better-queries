@@ -128,3 +128,6 @@ $deleteWhere = [
 
 (new query)->delete("users", $deleteWhere);
 ```
+<br><br>
+<h1>Contributions </h1> <br>
+Salil Mittal
