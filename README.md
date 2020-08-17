@@ -51,7 +51,7 @@ $conn = (new query)->conn;
 <br>
 <h1>SELECT Statement</h1>
 Select statement returns 2 values:<br><br>
-1) <b>data</b> - mysqli_fetch_assoc data in an array. <br><br>
+1) <b>data_array</b> - mysqli_fetch_assoc data in an array. <br><br>
 2) <b>data_num_rows</b> - Number of rows (mysqli_num_rows)<br><br>
 
 Usage: <br>
@@ -114,7 +114,7 @@ $updateWhere [
 	["LENGTH(uid)", ">", "10", '']
 ];
 
-(new query)->update("users", $updateValues, $udpateWhere);
+(new query)->update("users", $updateValues, $updateWhere);
 
 ```
 
