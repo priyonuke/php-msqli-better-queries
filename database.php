@@ -6,7 +6,7 @@ class query {
 	private $conn;
 	private $error;
 	public function __construct() {
-		$this->conn = mysqli_connect("localhost", "root", "", "social_network");
+		$this->conn = mysqli_connect("localhost", "root", "", "dbname");
 		if (!$this->conn) {
 			die('Database Connection Error ' . mysqli_connect_error($this->conn));
 		}
