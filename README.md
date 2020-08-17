@@ -42,6 +42,10 @@ Include the file by doing:
 ```
 require "database.php"
 ```
+<br>To use connection for other queries by mysqli_ or OO use define connection as:
+```
+$conn = (new query)->conn;
+```
 <br>
 <b>Note</b>: Change Database connection according to your settings in database.php 
 <br>
