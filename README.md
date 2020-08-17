@@ -130,4 +130,4 @@ $deleteWhere = [
 ```
 <br><br>
 <h1>Contributions </h1> <br>
-Salil Mittal
+<a href='https://github.com/SalilMittal'>Salil Mittal</a>
