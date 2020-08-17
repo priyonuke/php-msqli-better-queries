@@ -43,7 +43,7 @@ Include the file by doing:
 require "database.php"
 ```
 <br>
-<b>Note</b>:Change Database connection according to your settings in database.php 
+<b>Note</b>: Change Database connection according to your settings in database.php 
 <br>
 <h1>SELECT Statement</h1>
 Select statement returns to parameters:<br>
@@ -95,7 +95,7 @@ $insertValues = array(
 Update takes 3 parameters table name, set data and where conditions.
 <Br>
 Here update data is an associative array with field names as key and new values.<br>
-<b>Note: </b> WHERE condition is set to default as required.
+<b>Note: </b> WHERE condition is set to default as required.<br>
 Update conditions are similar to that of select statement<br><Br>
 
 ```
