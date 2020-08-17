@@ -1,5 +1,5 @@
 # Better SQLI queries using PHP 
-Write shorter mysqli queries using this code. It automatically uses prepared statements for all queries and shortens queries significantly.
+Write shorter mysqli queries using this code. It automatically uses <b>prepared statements for all queries</b> and <b>shortens queries significantly</b>.
 
 What originally would be:
 
