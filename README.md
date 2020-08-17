@@ -46,9 +46,9 @@ require "database.php"
 <b>Note</b>: Change Database connection according to your settings in database.php 
 <br>
 <h1>SELECT Statement</h1>
-Select statement returns to parameters:<br>
-1)<b>data</b> - mysqli_fetch_assoc data in an array. <br>
-2)<b>data_num_rows</b> - Number of rows (mysqli_num_rows)<br>
+Select statement returns to parameters:<br><br>
+1)<b>data</b> - mysqli_fetch_assoc data in an array. <br><br>
+2)<b>data_num_rows</b> - Number of rows (mysqli_num_rows)<br>><br>
 
 Usage: <br>
        1) select() takes 3 params -> tablename, fields to retrieve and conditions. To specify no conditions use an empty array.<br><br>
