@@ -1,22 +1,23 @@
-# php-msqli-better-queries
-Write shorter mysqli queries using this code. It automatically prepares queries and shortens queries significantly.
+# Better SQLI queries using PHP 
+Write shorter mysqli queries using this code. It automatically uses prepared statements for all queries and shortens queries significantly.
 
 What originally would be:
 
 ```		
-    $query = $conn->prepare("INSERT INTO articles (uid, username, userID, title, html, images, postTime) VALUES(?, ?, ?, ?, ?, ?, ?)");
-		$query->bind_param("ssissss", $uid, $user, $userID, $articleTitle, $htmlContent, $arrToStr, $time);
+$query = "INSERT INTO table (uid, username, userID, title, content, images, postTime) VALUES(?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ssissss", $uid, $user, $userID, $articleTitle, $htmlContent, $arrToStr, $time);
 
-		$uid = generateKey($conn);
-		$user = $_SESSION['username'];
-		$userID = $_SESSION['id'];
-		$articleTitle = $title;
-		$htmlContent = $html;
-		$arrToStr = implode(" ", $imgs);
-		$time = time();
+$uid = generateKey($conn);
+$user = $_SESSION['username'];
+$userID = $_SESSION['id'];
+$articleTitle = $title;
+$htmlContent = $html;
+$arrToStr = implode(" ", $imgs);
+$time = time();
 
-		$query->execute();
-		$query->close();
+$stmt->execute();
+$stmt->close();
 ```
 
 Becomes:
@@ -34,3 +35,42 @@ $insertValues = array(
 
 (new query)->insert("articles", $insertValues);
 ```
+
+<h1>How to Use the File:</h1>
+Include the file by doing:
+
+```
+require "database.php"
+```
+<br>
+<b>Note</b>:Change Database connection according to your settings in database.php 
+<br>
+<h1>SELECT Statement</h1>
+Select statement returns to parameters:<br>
+1)<b>data</b> - mysqli_fetch_assoc data in an array form
+2)<b>data_num_rows</b> - Number of rows (mysqli_num_rows)
+
+Usage: select() takes 3 params -> tablename, fields to retrieve and conditions.
+To use
+<br>
+```
+//Mention where conditions in a multidimensional array. All arrays must have four elements: field name, logical operator, value, Clause (And, OR etc).
+//Leave Clause empty for last array or if only one array.
+$selectWhere = [
+	["id", "<", 31, "AND"],
+	["age", ">", 21, "AND"],
+	["status", "=", Online", '']
+] ;
+
+$data = (new query)->select("users", "id, age", $selectWhere);
+$age = $data['data_array'][0]['age'];
+
+//Note use foreach loop to iterate over data not while
+if($data['data_num_rows'] > 0) {
+	foreach($data as $row) {
+		echo $row['username'] . "<br> . $row['id'];
+	}
+}
+
+```
+
