@@ -46,7 +46,7 @@ require "database.php"
 <b>Note</b>: Change Database connection according to your settings in database.php 
 <br>
 <h1>SELECT Statement</h1>
-Select statement returns to parameters:<br><br>
+Select statement returns 2 values:<br><br>
 1) <b>data</b> - mysqli_fetch_assoc data in an array. <br><br>
 2) <b>data_num_rows</b> - Number of rows (mysqli_num_rows)<br><br>
 
